@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,36 +9,91 @@
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        .font-heading { font-family: 'Cinzel', serif; }
+        
+        /* Gold Gradient Utility */
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+        }
+        .gold-text {
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 30%, #b38728 70%, #fbf5b7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white pb-16 md:pb-0">
 
-    <!-- Header / Navigation -->
-    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="bg-blue-900 text-amber-400 w-10 h-10 rounded-xl font-black text-lg flex items-center justify-center shadow-md group-hover:bg-blue-950 transition">SSTP</div>
+    <!-- Top Announcement Bar -->
+    <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 text-center border-b border-amber-500/20">
+        <span class="inline-flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-amber-400"></i> Serving Coimbatore, Tirupur, & Nearby Districts Since 2016
+        </span>
+    </div>
+
+    <!-- Header / Navigation (With Glassmorphism / Backdrop Blur) -->
+    <header class="bg-blue-950/95 backdrop-blur-md text-white shadow-lg sticky top-0 z-50 border-b border-blue-900/50 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Logo + Title Section -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <!-- SVG Golden Saibaba Emblem -->
+                <div class="relative w-12 h-12 md:w-14 md:h-14 shrink-0 transition transform group-hover:scale-105">
+                    <svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-md">
+                        <defs>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#bf953f" />
+                                <stop offset="25%" stop-color="#fcf6ba" />
+                                <stop offset="50%" stop-color="#b38728" />
+                                <stop offset="75%" stop-color="#fbf5b7" />
+                                <stop offset="100%" stop-color="#aa771c" />
+                            </linearGradient>
+                            <radialGradient id="innerGold" cx="50%" cy="50%" r="50%">
+                                <stop offset="70%" stop-color="#d4af37" />
+                                <stop offset="100%" stop-color="#8a6d1c" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="46" fill="url(#goldGrad)" stroke="#5c440a" stroke-width="1.5"/>
+                        <circle cx="50" cy="50" r="41" fill="#1e293b" stroke="url(#goldGrad)" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="37" fill="url(#innerGold)" />
+                        
+                        <g fill="#281a04" transform="translate(0, 2)">
+                            <path d="M 36 32 C 38 22, 62 22, 64 32 C 60 30, 40 30, 36 32 Z" />
+                            <path d="M 40 33 C 40 46, 60 46, 60 33 C 54 44, 46 44, 40 33 Z" />
+                            <path d="M 41 42 C 43 55, 57 55, 59 42 C 54 59, 46 59, 41 42 Z" />
+                            <path d="M 28 68 C 30 50, 70 50, 72 68 C 65 62, 35 62, 28 68 Z" />
+                            <circle cx="68" cy="46" r="4" fill="#281a04"/>
+                        </g>
+                    </svg>
+                </div>
+
                 <div>
-                    <h1 class="font-black text-slate-900 text-base leading-tight tracking-tight">Sree Sai Security</h1>
-                    <p class="text-xs text-amber-600 font-bold tracking-wider uppercase">The Talent Point</p>
+                    <h1 class="font-heading text-lg md:text-2xl font-extrabold tracking-wider text-amber-300 leading-tight">
+                        SREE SAI SECURITY
+                    </h1>
+                    <p class="text-[11px] md:text-xs font-bold tracking-widest text-slate-300 uppercase">
+                        & The Talent Point <span class="text-amber-400 font-normal">| HR Consultancy</span>
+                    </p>
                 </div>
             </a>
-            
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-                <a href="#about" class="hover:text-blue-900 transition">About Us</a>
-                <a href="#recruitment" class="hover:text-amber-600 transition">HR Consultancy</a>
-                <a href="#security" class="hover:text-blue-900 transition">Security Agency</a>
-                <a href="#contact" class="hover:text-blue-900 transition">Location</a>
+
+            <!-- Navigation Links -->
+            <nav class="flex flex-wrap justify-center items-center gap-6 text-xs md:text-sm font-semibold text-slate-200">
+                <a href="#about" class="hover:text-amber-400 transition">About Us</a>
+                <a href="#security" class="hover:text-amber-400 transition">Security Agency</a>
+                <a href="#recruitment" class="hover:text-amber-400 transition">HR Solutions</a>
+                <a href="#contact" class="hover:text-amber-400 transition">Location</a>
             </nav>
 
-            <div class="hidden sm:flex items-center gap-3">
-                <a href="https://wa.me/919940014815?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow hover:shadow-md transition flex items-center gap-2">
+            <!-- Desktop Direct Actions -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="https://wa.me/919940014815?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold px-4 py-2.5 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
                 </a>
-                <a href="tel:+919940014815" class="bg-blue-900 hover:bg-blue-950 text-white text-xs font-bold px-4 py-2.5 rounded-lg shadow hover:shadow-md transition flex items-center gap-2">
+                <a href="tel:+919940014815" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold px-4 py-2.5 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
                     <i class="fa-solid fa-phone text-xs"></i> Call Now
                 </a>
             </div>
@@ -46,228 +101,226 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-slate-950 text-white overflow-hidden py-16 md:py-24">
+    <section class="relative bg-slate-950 text-white overflow-hidden py-16 md:py-24 border-b-4 border-amber-500">
         <!-- Accent Glow background effect -->
         <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-6 backdrop-blur-sm">
-                <i class="fa-solid fa-location-dot text-amber-400"></i> Serving Coimbatore & Nearby Districts
-            </span>
-            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto">
-                Comprehensive HR Recruitment & <br class="hidden sm:inline">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">Security Manpower Solutions</span>
-            </h2>
-            <p class="mt-6 text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                Empowering businesses with top-tier talent acquisition, expert statutory compliance, and reliable, pre-vetted security personnel.
-            </p>
             
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-                <a href="#recruitment" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-briefcase"></i> HR & Recruitment
-                </a>
-                <a href="#security" class="bg-blue-900 hover:bg-blue-800 text-white font-extrabold px-6 py-3.5 rounded-xl shadow-lg border border-blue-700 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-shield-halved"></i> Security Agency
-                </a>
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-amber-300 uppercase">
+                Trusted Manpower & HR Solutions
+            </h2>
+            <p class="mt-6 text-slate-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-light">
+                Empowering businesses across Coimbatore with highly trained security personnel, turnkey recruitment solutions, and end-to-end statutory compliance advisory.
+            </p>
+
+            <!-- Key Feature Badges Grid (High Contrast & Cards) -->
+            <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 p-4 rounded-2xl text-center shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-shield-halved text-amber-400 text-3xl mb-2"></i>
+                    <h3 class="font-bold text-xs md:text-sm text-white">Security Manpower</h3>
+                    <p class="text-[11px] text-slate-400 mt-1">Industrial & Commercial</p>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 p-4 rounded-2xl text-center shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-user-tie text-amber-400 text-3xl mb-2"></i>
+                    <h3 class="font-bold text-xs md:text-sm text-white">Recruitment Solutions</h3>
+                    <p class="text-[11px] text-slate-400 mt-1">Pre-screened Talent</p>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 p-4 rounded-2xl text-center shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-scale-balanced text-amber-400 text-3xl mb-2"></i>
+                    <h3 class="font-bold text-xs md:text-sm text-white">PF, ESI & Factories Act</h3>
+                    <p class="text-[11px] text-slate-400 mt-1">Statutory Compliance</p>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 p-4 rounded-2xl text-center shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-broom text-amber-400 text-3xl mb-2"></i>
+                    <h3 class="font-bold text-xs md:text-sm text-white">Housekeeping Services</h3>
+                    <p class="text-[11px] text-slate-400 mt-1">Skilled Staff Provision</p>
+                </div>
             </div>
 
-            <!-- Quick Trust Badges -->
-            <div class="mt-12 pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-4 text-slate-400 text-xs font-semibold">
-                <div class="flex items-center justify-center gap-2"><i class="fa-solid fa-check-circle text-amber-400"></i> Established 2016</div>
-                <div class="flex items-center justify-center gap-2"><i class="fa-solid fa-check-circle text-amber-400"></i> 41+ Yrs Senior HR Expertise</div>
-                <div class="flex items-center justify-center gap-2"><i class="fa-solid fa-check-circle text-amber-400"></i> Pre-Screened Talent Pool</div>
-                <div class="flex items-center justify-center gap-2"><i class="fa-solid fa-check-circle text-amber-400"></i> Complete Legal Compliance</div>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/919940014815?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2.5 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Quick WhatsApp Enquiry
+                </a>
+                <a href="#contact" class="bg-blue-900 hover:bg-blue-800 text-amber-300 font-extrabold px-6 py-3.5 rounded-xl shadow-lg border border-amber-500/40 transition transform hover:-translate-y-0.5 text-sm">
+                    Visit Coimbatore Office
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Leadership & Experience -->
+    <!-- Leadership Section -->
     <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 md:p-12 border border-slate-100 relative overflow-hidden">
+        <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/60 p-8 md:p-12 border border-slate-200 relative overflow-hidden">
             <div class="flex flex-col lg:flex-row items-center gap-10">
                 <div class="lg:w-2/3">
-                    <div class="inline-flex items-center gap-2 text-blue-900 text-xs font-bold uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-md mb-3">
-                        <i class="fa-solid fa-award"></i> Industry Leadership
-                    </div>
-                    <h3 class="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">Led by Senior HR Consultant</h3>
-                    <p class="text-amber-600 font-extrabold text-lg mt-1">Mr. R. Ramlakshman <span class="text-slate-500 font-medium text-sm">(B.Sc., PGDPM., MHRM.)</span></p>
-                    
-                    <p class="text-slate-600 leading-relaxed mt-4">
-                        With over <strong>41+ years of proven Senior HR experience</strong>, we bridge the gap between business recruitment demands and high-calibre candidates. We deliver tailored talent acquisition, personnel management, and end-to-end statutory compliance for companies across Tamil Nadu.
+                    <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">Leadership & Foundation</span>
+                    <h3 class="text-2xl md:text-4xl font-black text-slate-900 tracking-tight mt-2">Led by Senior HR Consultant</h3>
+                    <p class="text-amber-700 font-extrabold text-lg mt-1">Mr. R. Ramlakshman <span class="text-slate-500 font-medium text-sm">(B.Sc., PGDPM., MHRM.)</span></p>
+                    <div class="h-1 w-20 bg-amber-500 my-4"></div>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                        Leveraging over <strong>41+ years of Senior HR Experience</strong>, our firm delivers structured recruitment strategies, legal advisory, and high-standard personnel deployment across commercial and industrial hubs.
                     </p>
-                    
-                    <div class="mt-6 flex flex-wrap gap-3">
-                        <span class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-xs font-bold px-3.5 py-2 rounded-lg">
-                            <i class="fa-solid fa-scale-balanced text-amber-600"></i> Statutory Compliance Expert
-                        </span>
-                        <span class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-xs font-bold px-3.5 py-2 rounded-lg">
-                            <i class="fa-solid fa-building-user text-blue-900"></i> Industrial Manpower
-                        </span>
-                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                        Since 2016, both <strong class="text-slate-900">Sree Sai Security</strong> and <strong class="text-slate-900">The Talent Point</strong> have unburdened businesses from manpower requirement liabilities and statutory provision burdens.
+                    </p>
                 </div>
 
                 <div class="lg:w-1/3 w-full grid grid-cols-2 lg:grid-cols-1 gap-4">
-                    <div class="bg-gradient-to-br from-blue-900 to-slate-900 text-white p-6 rounded-2xl shadow-md text-center">
+                    <div class="bg-blue-950 text-white p-6 rounded-2xl text-center border-2 border-amber-400/40 shadow-md">
                         <div class="text-4xl md:text-5xl font-black text-amber-400">41+</div>
-                        <div class="text-xs font-bold uppercase tracking-wider text-slate-300 mt-1">Years Experience</div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-slate-300 mt-1">Years Senior HR Experience</div>
                     </div>
-                    <div class="bg-amber-500 text-slate-950 p-6 rounded-2xl shadow-md text-center">
+                    <div class="bg-amber-500 text-slate-950 p-6 rounded-2xl text-center shadow-md">
                         <div class="text-4xl md:text-5xl font-black">2016</div>
-                        <div class="text-xs font-bold uppercase tracking-wider text-slate-900 mt-1">Serving Coimbatore</div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-slate-900 mt-1">Established in Coimbatore</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Enhanced Dual-Brand Services Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-black text-slate-900">Our Core Services</h2>
-            <p class="text-slate-600 mt-2">Professional, efficient, and tailored solutions for industries and establishments.</p>
+            <h2 class="text-3xl font-black text-slate-900">Our Business Divisions</h2>
+            <p class="text-slate-600 mt-2 text-sm">Tailored manpower and recruitment solutions designed for operational excellence.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-8">
 
-            <!-- Card 1: The Talent Point (HR) -->
-            <section id="recruitment" class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200/80 p-8 flex flex-col justify-between hover:border-amber-400 transition-all duration-300">
-                <div>
-                    <div class="flex items-center justify-between mb-6 pb-6 border-b border-slate-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-amber-500 text-slate-950 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-md"><i class="fa-solid fa-user-tie"></i></div>
-                            <div>
-                                <h3 class="font-black text-2xl text-slate-900">The Talent Point</h3>
-                                <p class="text-xs font-bold text-amber-600 tracking-wider uppercase">Recruitment Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h4 class="font-extrabold text-slate-900 text-sm uppercase tracking-wider mb-3">Sectors We Specialize In:</h4>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-slate-100 text-slate-800 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-slate-200/60">Engineering</span>
-                        <span class="bg-slate-100 text-slate-800 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-slate-200/60">Textile</span>
-                        <span class="bg-slate-100 text-slate-800 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-slate-200/60">Foundry</span>
-                        <span class="bg-slate-100 text-slate-800 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-slate-200/60">Jewellery</span>
-                        <span class="bg-slate-100 text-slate-800 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-slate-200/60">Retail Showrooms</span>
-                    </div>
-
-                    <h4 class="font-extrabold text-slate-900 text-sm uppercase tracking-wider mb-3">Pre-Screened Talent Pool:</h4>
-                    <div class="grid grid-cols-2 gap-3 text-sm text-slate-700 font-medium mb-6">
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Accounts</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Electrical Maint.</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Purchase</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Human Resources</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Production</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> System Admin</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Quality Assurance</div>
-                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Data Entry & Stores</div>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-r from-amber-500/10 to-amber-500/5 p-5 rounded-2xl border border-amber-500/20 flex items-center justify-between">
-                    <div>
-                        <span class="text-xs font-bold text-amber-800 uppercase tracking-widest block">Recruitment Fee</span>
-                        <span class="text-xs text-slate-600 font-medium">Transparent placement charges</span>
-                    </div>
-                    <div class="text-right">
-                        <span class="text-2xl font-black text-slate-900">8.33%</span>
-                        <span class="text-xs text-slate-500 block">of CTC</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Card 2: Sree Sai Security -->
+            <!-- Card 1: Sree Sai Security (Trust Shield Navy/Blue Accents) -->
             <section id="security" class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200/80 p-8 flex flex-col justify-between hover:border-blue-900 transition-all duration-300">
                 <div>
-                    <div class="flex items-center justify-between mb-6 pb-6 border-b border-slate-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-blue-900 text-amber-400 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-md"><i class="fa-solid fa-shield-halved"></i></div>
-                            <div>
-                                <h3 class="font-black text-2xl text-slate-900">Sree Sai Security</h3>
-                                <p class="text-xs font-bold text-blue-900 tracking-wider uppercase">Manpower Provision</p>
-                            </div>
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-slate-100">
+                        <div class="bg-blue-950 text-amber-400 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-md"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h3 class="font-black text-2xl text-slate-900">Sree Sai Security</h3>
+                            <p class="text-xs font-bold text-blue-900 tracking-wider uppercase">Manpower Provision</p>
                         </div>
                     </div>
 
-                    <h4 class="font-extrabold text-slate-900 text-sm uppercase tracking-wider mb-3">Serving Establishments:</h4>
-                    <div class="grid grid-cols-2 gap-3 text-sm text-slate-700 font-medium mb-6">
-                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center gap-3"><i class="fa-solid fa-industry text-blue-900"></i> Industries</div>
-                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center gap-3"><i class="fa-solid fa-hospital text-blue-900"></i> Hospitals</div>
-                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center gap-3"><i class="fa-solid fa-graduation-cap text-blue-900"></i> Schools & Colleges</div>
-                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex items-center gap-3"><i class="fa-solid fa-house-chimney text-blue-900"></i> Bungalows</div>
+                    <h4 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider mb-3">Deploying Personnel To:</h4>
+                    <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 font-medium mb-6">
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 flex items-center gap-2"><i class="fa-solid fa-industry text-blue-900"></i> Industries</div>
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 flex items-center gap-2"><i class="fa-solid fa-hospital text-blue-900"></i> Hospitals</div>
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 flex items-center gap-2"><i class="fa-solid fa-school text-blue-900"></i> Schools & Colleges</div>
+                        <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100 flex items-center gap-2"><i class="fa-solid fa-house-chimney text-blue-900"></i> Bungalows</div>
                     </div>
 
-                    <h4 class="font-extrabold text-slate-900 text-sm uppercase tracking-wider mb-3">Available Personnel:</h4>
-                    <ul class="space-y-2 text-sm text-slate-700 font-medium mb-6">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-shield text-blue-900 text-xs"></i> Security Personnel (Ex-servicemen, Retired Police, Energetic Youth)</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-broom text-blue-900 text-xs"></i> House Keeping Personnel</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-screwdriver-wrench text-blue-900 text-xs"></i> Skilled & Unskilled Labour</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-user-gear text-blue-900 text-xs"></i> Staff Provision (All Categories)</li>
+                    <h4 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider mb-3">Available Manpower Roles:</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-700 font-medium mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-900 text-sm"></i> Security Personnel (Ex-servicemen, Retired Police, Energetic Youth)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-900 text-sm"></i> House Keeping Personnel</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-900 text-sm"></i> Skilled & Unskilled Labour</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-900 text-sm"></i> Staff Provision (All Categories)</li>
                     </ul>
                 </div>
 
-                <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100">
-                    <span class="text-xs font-bold text-blue-900 uppercase tracking-widest block mb-1">Our Assurance</span>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
-                        We completely unburden your business from manpower management hassles and statutory provisions.
-                    </p>
+                <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100 text-xs text-blue-950 font-semibold leading-relaxed">
+                    <i class="fa-solid fa-shield-cat text-blue-900 mr-1.5"></i> Engaging our team unburdens your organization completely from manpower requirement liabilities.
+                </div>
+            </section>
+
+            <!-- Card 2: The Talent Point (Professional Amber/Gold Accents) -->
+            <section id="recruitment" class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200/80 p-8 flex flex-col justify-between hover:border-amber-400 transition-all duration-300">
+                <div>
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-slate-100">
+                        <div class="bg-amber-500 text-slate-950 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-md"><i class="fa-solid fa-users-gear"></i></div>
+                        <div>
+                            <h3 class="font-black text-2xl text-slate-900">The Talent Point</h3>
+                            <p class="text-xs font-bold text-amber-600 tracking-wider uppercase">Recruitment Solutions</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider mb-3">Key Sectors Served:</h4>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-amber-50 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-lg border border-amber-200/60">Engineering</span>
+                        <span class="bg-amber-50 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-lg border border-amber-200/60">Textile</span>
+                        <span class="bg-amber-50 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-lg border border-amber-200/60">Foundry</span>
+                        <span class="bg-amber-50 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-lg border border-amber-200/60">Jewellery</span>
+                        <span class="bg-amber-50 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-lg border border-amber-200/60">Retail Showroom</span>
+                    </div>
+
+                    <h4 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider mb-3">Pre-Screened Talent Pool:</h4>
+                    <div class="grid grid-cols-2 gap-2.5 text-xs text-slate-700 font-medium mb-6">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> Accounts</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> Electrical Maint.</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> Purchase</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> Human Resources</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> Production</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> System Admin</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> Quality Assurance</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-sm"></i> Stores & Data Entry</div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/80 p-4 rounded-2xl border border-amber-200 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-amber-900 uppercase block">Recruitment Service Charge</span>
+                        <span class="text-[11px] text-slate-600">Standard placement terms</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-2xl font-black text-slate-900">8.33%</span>
+                        <span class="text-[10px] text-slate-500 block">of Candidate CTC</span>
+                    </div>
                 </div>
             </section>
 
         </div>
 
-        <!-- Statutory Compliance Banner -->
-        <div class="mt-8 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl p-8 md:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="max-w-2xl">
-                <span class="inline-block bg-amber-500/20 text-amber-400 text-xs font-extrabold px-3 py-1 rounded-md uppercase tracking-widest mb-2">Legal & Statutory Consultancy</span>
+        <!-- Statutory Legal Advisory Banner -->
+        <div class="mt-8 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 border border-amber-500/30">
+            <div>
+                <span class="bg-amber-500/20 text-amber-400 text-xs font-extrabold px-3 py-1 rounded-md uppercase tracking-widest mb-2 inline-block">Consultancy & Advisory</span>
                 <h3 class="text-2xl font-black">PF, ESI, Factories Act & PCB Approvals</h3>
-                <p class="text-slate-300 text-sm mt-2 leading-relaxed">
-                    Complete advisory and management for Provident Fund (PF), Employee State Insurance (ESI), Factories Act regulations, and Pollution Control Board (PCB) clearances.
+                <p class="text-slate-300 text-xs md:text-sm mt-1 leading-relaxed">
+                    Expert legal guidance regarding the Factories Act, PF & ESI filings, and Pollution Control Board compliance requirements.
                 </p>
             </div>
-            <a href="tel:+919940014815" class="whitespace-nowrap bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-6 py-3.5 rounded-xl shadow transition">
+            <a href="tel:+919940014815" class="whitespace-nowrap bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-6 py-3 rounded-xl text-xs shadow transition transform hover:-translate-y-0.5">
                 Consult Advisor
             </a>
         </div>
     </div>
 
-    <!-- Location & Contact Section -->
+    <!-- Contact & Address Section (With Embedded Google Maps) -->
     <section id="contact" class="bg-slate-100 py-16 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <h2 class="text-3xl font-black text-slate-900">Contact Us</h2>
-                <p class="text-slate-600 mt-2">Get in touch directly or visit our main office in Coimbatore.</p>
+                <p class="text-slate-600 text-sm mt-1">Get in touch directly or visit our office in Coimbatore.</p>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8 mb-12">
-                <!-- Phone -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <!-- Phone Card -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center hover:shadow-md transition">
                     <div class="bg-blue-50 text-blue-900 w-12 h-12 rounded-xl flex items-center justify-center text-xl mx-auto mb-4"><i class="fa-solid fa-phone"></i></div>
-                    <h3 class="font-bold text-slate-900">Phone Numbers</h3>
-                    <p class="text-slate-500 text-xs mt-1">Direct Call & WhatsApp</p>
+                    <h3 class="font-bold text-slate-900 text-sm">Call Us</h3>
+                    <p class="text-slate-500 text-xs mt-1">Direct Phone & WhatsApp</p>
                     <div class="mt-4 space-y-1">
                         <a href="tel:+919940014815" class="block text-blue-900 font-extrabold text-base hover:underline">+91 99400 14815</a>
-                        <a href="tel:+918220583836" class="block text-slate-700 font-bold text-sm hover:underline">+91 82205 83836</a>
+                        <a href="tel:+918220583836" class="block text-slate-700 font-bold text-xs hover:underline">+91 82205 83836</a>
                     </div>
                 </div>
 
-                <!-- Email -->
+                <!-- Email Card -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center hover:shadow-md transition">
                     <div class="bg-amber-50 text-amber-600 w-12 h-12 rounded-xl flex items-center justify-center text-xl mx-auto mb-4"><i class="fa-solid fa-envelope"></i></div>
-                    <h3 class="font-bold text-slate-900">Email Addresses</h3>
+                    <h3 class="font-bold text-slate-900 text-sm">Email Us</h3>
                     <p class="text-slate-500 text-xs mt-1">For HR requirements & resumes</p>
                     <div class="mt-4 space-y-1">
-                        <a href="mailto:hrtalentpoint@gmail.com" class="block text-blue-900 font-bold text-sm hover:underline">hrtalentpoint@gmail.com</a>
+                        <a href="mailto:hrtalentpoint@gmail.com" class="block text-blue-900 font-bold text-xs hover:underline">hrtalentpoint@gmail.com</a>
                         <a href="mailto:ramlakhmancbe@gmail.com" class="block text-slate-600 font-medium text-xs hover:underline">ramlakhmancbe@gmail.com</a>
                     </div>
                 </div>
 
-                <!-- Office -->
+                <!-- Office Address Card -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center hover:shadow-md transition">
                     <div class="bg-slate-100 text-slate-800 w-12 h-12 rounded-xl flex items-center justify-center text-xl mx-auto mb-4"><i class="fa-solid fa-location-dot"></i></div>
-                    <h3 class="font-bold text-slate-900">Office Location</h3>
-                    <p class="text-slate-500 text-xs mt-1">Coimbatore, Tamil Nadu</p>
+                    <h3 class="font-bold text-slate-900 text-sm">Coimbatore Office</h3>
+                    <p class="text-slate-500 text-xs mt-1">Headquarters</p>
                     <p class="text-slate-700 text-xs font-semibold mt-3 leading-relaxed">
                         Site No.7, Sri Kandan Garden, Seerpalayam,<br>
                         Bodipalayam Post, Coimbatore – 641105
@@ -276,7 +329,7 @@
             </div>
 
             <!-- Embedded Google Map -->
-            <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-white p-3 rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
                 <iframe 
                     class="w-full h-80 rounded-2xl border-0" 
                     src="https://maps.google.com/maps?q=Bodipalayam,%20Coimbatore&t=&z=13&ie=UTF8&iwloc=&output=embed" 
@@ -293,12 +346,12 @@
         <p class="mt-1">Coimbatore, Tamil Nadu, India.</p>
     </footer>
 
-    <!-- Mobile Floating Quick Access Bar -->
+    <!-- Mobile Sticky Floating Bar (Quick Phone / WhatsApp Access) -->
     <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 flex items-center justify-around md:hidden z-50 shadow-lg">
-        <a href="tel:+919940014815" class="flex-1 mr-2 bg-blue-900 text-white font-bold text-xs py-2.5 rounded-xl text-center flex items-center justify-center gap-2">
+        <a href="tel:+919940014815" class="flex-1 mr-2 bg-blue-950 text-white font-bold text-xs py-2.5 rounded-xl text-center flex items-center justify-center gap-2 shadow">
             <i class="fa-solid fa-phone"></i> Call Now
         </a>
-        <a href="https://wa.me/919940014815?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="flex-1 bg-emerald-600 text-white font-bold text-xs py-2.5 rounded-xl text-center flex items-center justify-center gap-2">
+        <a href="https://wa.me/919940014815?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="flex-1 bg-emerald-600 text-white font-bold text-xs py-2.5 rounded-xl text-center flex items-center justify-center gap-2 shadow">
             <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
         </a>
     </div>
